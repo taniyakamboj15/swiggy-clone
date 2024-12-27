@@ -1,19 +1,24 @@
 import React from 'react'
 import RestCard from './RestCard'
+import { rest } from '../utils/rest'
 
 const Body = () => {
+ 
   return (
     <div className='body'>
-        <div className="search">search</div>
+        <div className="first-btn" >
+          <button className='fir-btn'onClick={()=>{console.log("button clicked")}}> top rated button</button>
+
+        </div>
         <div className='rest-container'>
-            <RestCard resName=" KFC" cuisine="chicken wings , burger" />
-            <RestCard resName=" Dominos" cuisine="PIZZA burger"/>
-            <RestCard resName=" pizza hut" cuisine="pizza, macroni , burger"/>
-            <RestCard resName=" one 8" cuisine="indian cuisines"/>
-            <RestCard resName=" burger singh" cuisine="burger , maggie"/>
-            <RestCard resName=" Qbc" cuisine="Dal tadka, Veg Pulao"/>
-            <RestCard resName=" DHABA" cuisine="North Indian cuisines"/>
-            <RestCard resName=" RE: GENTA" cuisine="Italian & Indian cuisines "/>
+          {rest.map((res,index) => {
+            return (
+<RestCard resName=" KFC" rest={res} key={index} />
+            )
+          })}
+            
+
+
         </div>
 
     </div>

@@ -1,13 +1,19 @@
 import React from 'react'
+import IMAGE_URL from '../constants/imageAdd';
 
-const RestCard = ({resName,cuisine}) => {
+const RestCard = ({rest}) => {
+  console.log(rest);
+ 
+  const {name,cuisines,
+    cloudinaryImageId
+    } = rest.info;
     
 
   return (
     <div className='rest-card'>
-        <img alt="gvgv" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/7/16/f63a6861-4706-4534-8fc4-e95fec2e0ab8_16865.jpg" ></img>
-        <h1>{resName}</h1>
-        <p>{cuisine}</p>
+        <img alt="gvgv" src={IMAGE_URL  + cloudinaryImageId} ></img>
+        <h1>{name}</h1>
+        <p>{cuisines.join(",")}</p>
         <p>4.5</p>
         <p>450rs</p>
     </div>
