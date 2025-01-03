@@ -1,4 +1,6 @@
-export const rest =[
+import { useState } from "react";
+
+export const [rest,setRest] = useState([
     {
       "info": {
         "id": "16865",
@@ -905,4 +907,5 @@ export const rest =[
       },
       "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
     }
-  ]
+]
+  );
