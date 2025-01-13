@@ -2,7 +2,7 @@ import React from 'react'
 import IMAGE_URL from '../constants/imageAdd';
 
 const RestCard = ({rest}) => {
-  console.log(rest);
+
  
   const {name,cuisines,
     cloudinaryImageId

@@ -1,7 +1,10 @@
 import React from 'react'
 import "../index.css";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [btnNameReact,setBtnname]=useState("login")
   return (
     <div className="header">
     <div className='logo'>
@@ -9,11 +12,20 @@ const Header = () => {
     </div>
     <div className='nav-items'>
       <ul>
-        <li>home</li>
-        <li>search</li>
-        <li>contact</li>
+        <li>
+        <Link to="/">Home</Link>
+        </li>
+        <li>
+        <Link to="/About">About</Link>
+        </li>
+        <li>
+        <Link to="/Contact">Contact</Link>
+        </li>
         <li>help</li>
         <li>cart</li>
+        <button  className='btn' onClick={()=>{
+          btnNameReact=="login"?setBtnname("logout"):setBtnname("login")
+        }}>{btnNameReact}</button>
       </ul>
     </div>
 </div>
