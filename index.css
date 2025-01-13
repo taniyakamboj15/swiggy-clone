@@ -62,3 +62,13 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.user_card{
+    padding: 30px;
+    border: 1px solid black;
+}
+
+.user_info{
+    padding: 30px;
+    border: 1px solid black;
+}
