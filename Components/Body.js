@@ -2,21 +2,17 @@ import React , {useEffect, useState} from 'react'
 import RestCard from './RestCard'
 import ShimmerUI from './Shimmer';
 import { Link } from 'react-router-dom';
+import useRestaurent from '../utils/useRestaurent';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Body = () => {
-  const [rest,setRest] = useState([]);
+ const {rest,name} = useRestaurent();
+ console.log(name);
   const [searchbtn,setsearchbtn]=useState("");
-  console.log("body rendered");
-  useEffect(()=>{
-   fetchData();
-  },[])
-  const fetchData = async () => {
-   
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6139298&lng=77.2088282&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
- const data1 = await data.json();
- const restaurent = data1.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
- setRest(restaurent);
-  }
+  const onlineStatus=useOnlineStatus();
+  if(onlineStatus=== false)return(
+    "LOOks like that you check your internet commection"
+  )
  
   return rest.length === 0?<ShimmerUI />: (
     <div className='body'>
@@ -30,6 +26,7 @@ res.info.name.toLowerCase().includes(searchbtn.toLowerCase())
           )
           setRest(filtered);
         }}>Search</button> 
+
          </div>
         <div className="first-btn" >
           <button className='fir-btn'onClick={()=>{const restlist = rest.filter((res)=>(
