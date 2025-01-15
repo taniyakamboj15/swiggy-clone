@@ -1,6 +1,6 @@
 // ShimmerUI.js
 import React from 'react';
-import '../ShimmerUI.css'; // Import the CSS file for styling
+
 
 const ShimmerUI = () => {
   return (

@@ -38,12 +38,14 @@ res.info.name.toLowerCase().includes(searchbtn.toLowerCase())
         <div className='rest-container'>
           {rest.map((res,index) => {
             return (
-              <Link to={`/restaurants/${res.info.id}`}  key={index}>
+              <Link to={`/restaurants/${res.info.id}`}  key={index} className="link-reset">
 <RestCard  rest={res} />
 </Link>
             )
           })}
-            
+       
+
+
 
 
         </div>

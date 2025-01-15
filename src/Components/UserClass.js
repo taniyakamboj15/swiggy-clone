@@ -13,7 +13,7 @@ class UserClass extends React.Component {
     }
 
     componentDidMount(){
-        console.log("chlid component did mount")
+        console.log("chlid component did mount");
     }
     render() {
         console.log("child render")

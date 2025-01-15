@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { RESMENU } from "../utils/constant";
 import { useParams } from "react-router-dom";
 import ShimmerUI from "./Shimmer";
-
+ 
 const Restaurants=()=>{
     const {resId} = useParams();
     const [rest , setRest] = useState();
