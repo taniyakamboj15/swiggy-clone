@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { RESMENU } from "../utils/constant";
 import { useParams } from "react-router-dom";
 import ShimmerUI from "./Shimmer";
+import Restaurantcategories from "./Restaurantcategories";
  
 const Restaurants=()=>{
     const {resId} = useParams();
@@ -13,24 +14,27 @@ const Restaurants=()=>{
 
         fetchdata();
     },[])
-    const fetchdata = async()=>{
+    const fetchdata = async()=> {
         const rest = await fetch(RESMENU + resId);
         const data1 = await rest.json();
         console.log("hello fro restrauant info",data1);
         setRest(data1?.data?.cards[0]?.card?.card?.text);
-        setTab(data1?.data?.cards[1].card.card.tabs);
+        setTab(data1?.data?.cards[1]?.card?.card?.tabs);
         setRestInfo(data1?.data?.cards[2]?.card?.card?.info);
-        setResMenu(data1?.data?.cards[4]?.groupedCard?.cardGroupMap?. REGULAR?.cards[4]?.card?.card?.itemCards)
-    }
-  
+        const itemcategory = data1?.data?.cards[4]?.groupedCard?.cardGroupMap?. REGULAR?.cards.filter(c=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+       setResMenu(itemcategory);
+       console.log("data1",data1);
 
+    }
+    
+  
+ 
   if(!rest) return <ShimmerUI />;
-  console.log("menu",resmenu[0]?.card?.info?.name);
-  console.log(resmenu)
+
 
 
     return(
-        <div id="cont">
+        <div className="flex flex-col justify-center items-center">
             <h1>{rest}</h1>
             {tab.map((e,index) => (
   <h4 key={index}>{e.title}</h4>
@@ -41,12 +45,11 @@ costForTwoMessage
 }</h5>
 <h4>{restinfo.cuisines}</h4>
             </div>
-            <div>
-{resmenu.map((res,index)=>( <h4 key={index}>{res.card?.info?.name}</h4>)
-)}
-            </div>
+{resmenu.map((category)=>(
+    <Restaurantcategories data={category.card?.card}
+    />
+    ))}
           
-
         </div>
     )
 }
