@@ -46,7 +46,7 @@ costForTwoMessage
 <h4>{restinfo.cuisines}</h4>
             </div>
 {resmenu.map((category)=>(
-    <Restaurantcategories data={category.card?.card}
+    <Restaurantcategories key={category.card?.card?.name} data={category.card?.card}
     />
     ))}
           
