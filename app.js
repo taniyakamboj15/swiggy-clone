@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/Components/Header";
 import Body from "./src/Components/Body";
@@ -9,17 +9,23 @@ import Restaurants from "./src//Components/restaurants";
 import { createBrowserRouter,RouterProvider , Outlet} from "react-router-dom";
 import ShimmerUI from "./src/Components/Shimmer";
 import "./index.css"
+import UserContext from "./src/utils/UserContext";
+import AppStore from "./src/utils/appStore";
+import { Provider } from "react-redux";
 
 
 const Grocery = lazy(()=>import("./src/Components/Grocery"));
-
 const AppLayout=()=>{
+    const [name,setName] = useState("Taniya")
     return(
+        <Provider store={AppStore}>
         <div>
+         <UserContext.Provider value={{name,setName}} >
             <Header/>
             <Outlet />
+            </UserContext.Provider>
             
-        </div>
+        </div></Provider>
     )
 }
 const Approuter=createBrowserRouter([

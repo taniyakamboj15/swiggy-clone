@@ -15,7 +15,7 @@ const Body = () => {
   )
   const Promoted = InhancedCard(RestCard);
  
-  return rest.length === 0?<ShimmerUI />: (
+  return rest?.length === 0?<ShimmerUI />: (
     <div className= "px-44 flex flex-col justify-center items-center ">
     <div className='flex'>
       <div className='m-4 p-4' >

@@ -19,6 +19,7 @@ render (){
     return(
         <div>
             <h1>About us</h1>
+            <div></div>
             <h1>this is my first about us page</h1>
              <User name={"Taniya kamboj"}location={"Dehradun"}/> 
             <UserClass name={"taniya kamboj(class)"} location={"Dehradun"} />

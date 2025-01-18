@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useContext} from "react";
 import { RESMENU } from "../utils/constant";
 import { useParams } from "react-router-dom";
 import ShimmerUI from "./Shimmer";
 import Restaurantcategories from "./Restaurantcategories";
+import UserContext from "../utils/UserContext";
  
 const Restaurants=()=>{
     const {resId} = useParams();
@@ -10,6 +11,10 @@ const Restaurants=()=>{
     const [tab,setTab] = useState();
     const [restinfo,setRestInfo] = useState();
     const [resmenu, setResMenu] = useState();
+    const[showdata,setShowdata]= useState(false);
+    const[showIndex,setShowIndex]= useState(null);
+    const {loggedInUser}=useContext(UserContext);
+    console.log(loggedInUser);
     useEffect(()=>{
 
         fetchdata();
@@ -44,9 +49,13 @@ const Restaurants=()=>{
 costForTwoMessage
 }</h5>
 <h4>{restinfo.cuisines}</h4>
+<h4> user:{loggedInUser}</h4>
             </div>
-{resmenu.map((category)=>(
+{resmenu.map((category,index)=>(
     <Restaurantcategories key={category.card?.card?.name} data={category.card?.card}
+    showdata={index ==showIndex ? true:false}
+    setShowIndex={() => setShowIndex(index)
+    }
     />
     ))}
           
