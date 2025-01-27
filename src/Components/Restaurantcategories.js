@@ -19,4 +19,5 @@ const Restaurantcategories = ({data,showdata,setShowIndex})=>{
     );
 };
 
+
 export default Restaurantcategories;

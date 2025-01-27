@@ -7,7 +7,16 @@ const Cartslice = createSlice({
     },
     reducers:{ // yehaan pe reducers hoga redu
         addItem : (state,action)=>{
-            state.items.push(action.payload);
+            const itemIndex = state.items.findIndex(
+                (item) => item.id === action.payload.id
+              );
+              if (itemIndex !== -1) {
+                // Increment quantity if item already exists
+                state.items[itemIndex].quantity += 1;
+              } else {
+                // Add new item with quantity = 1
+                state.items.push({ ...action.payload, quantity: 1 });
+              }
 
         },
         removeItem:(state)=>{

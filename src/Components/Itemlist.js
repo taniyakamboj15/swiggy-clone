@@ -4,7 +4,8 @@ import { addItem } from "../utils/cartslice";
 const Itemlist = ({items})=>{
     const dispatch=useDispatch();
     const handle=(item)=>{
-        dispatch(addItem(item));
+        console.log("FROM ADD ITEM", item);
+        dispatch(addItem({id: item.card?.info?.id, description: item.card?.info }));
 
     };
     console.log(items?.card?.info);
@@ -36,7 +37,7 @@ const Itemlist = ({items})=>{
            
 </div>))}
                 
-        </div> // pehle to image or text ko ek line me lana hai toh uske liye kya krogi flex yes   a firse glt jgh lagya dhyaan se dekhjo image or div kaunse div k andar hai ???
+        </div> 
     )
 }
 export default Itemlist;
