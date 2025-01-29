@@ -2,6 +2,7 @@
 
 ## Overview
 This is a **Swiggy Clone**, a food delivery web application built using **React** and **Redux Toolkit**. The project aims to replicate core functionalities of Swiggy, allowing users to browse restaurants, view menu items, and add them to a cart for ordering.
+**Live Demo**: [Swiggy Clone](https://swiggyclone-f93b5.web.app)
 
 ## Features
 
