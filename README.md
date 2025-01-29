@@ -4,18 +4,31 @@
 This is a **Swiggy Clone**, a food delivery web application built using **React** and **Redux Toolkit**. The project aims to replicate core functionalities of Swiggy, allowing users to browse restaurants, view menu items, and add them to a cart for ordering.
 
 ## Features
-- **React Router** for seamless navigation
-- **Redux Toolkit** for state management
-- **Lazy Loading** for improved performance
-- **Custom Hooks** for online status check & restaurant data fetching
-- **Shimmer UI** for loading screens
-- **Tailwind CSS** for styling
+
+🍽️ Browse restaurants and their menus
+
+🔍 Search functionality to find restaurants and dishes
+
+⭐ Filter top-rated restaurants
+
+🛒 Add/remove items from the cart
+
+🌐 Real-time data fetching using APIs
+
+⚡ Lazy loading for better performance
+
+📶 Online/offline status detection
+
+🏪 Grocery section (for future expansion)
 
 ## Tech Stack
 - **Frontend:** React, Redux Toolkit, Tailwind CSS
 - **Build Tool:** Parcel
 - **Routing:** React Router DOM
 - **State Management:** Redux Toolkit
+
+## NOTE : 
+- To see live data in the application, make sure to enable the CORS extension in your browser.
 
 ## Project Structure
 ```
