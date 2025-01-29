@@ -5,6 +5,8 @@ This is a **Swiggy Clone**, a food delivery web application built using **React*
 
 
 **Live Demo**: [Swiggy Clone](https://swiggyclone-f93b5.web.app)
+## NOTE : 
+- To see live data in the application, make sure to enable the CORS extension in your browser.
 
 ## Features
 
@@ -30,8 +32,7 @@ This is a **Swiggy Clone**, a food delivery web application built using **React*
 - **Routing:** React Router DOM
 - **State Management:** Redux Toolkit
 
-## NOTE : 
-- To see live data in the application, make sure to enable the CORS extension in your browser.
+
 
 ## Project Structure
 ```
