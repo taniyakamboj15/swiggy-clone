@@ -90,6 +90,10 @@ This is a **Swiggy Clone**, a food delivery web application built using **React*
 
 ## Screenshots
 (Add screenshots here)
+![swiggy_clone](https://github.com/user-attachments/assets/8018c46b-c023-4219-bf4c-35b45a26e3a4)
+![swigyy_clone2](https://github.com/user-attachments/assets/734cc5a2-add7-454a-bebc-22a660686913)
+
+
 
 ## License
 This project is licensed under the MIT License.
