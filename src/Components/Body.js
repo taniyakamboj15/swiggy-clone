@@ -56,7 +56,7 @@ res.info.name.toLowerCase().includes(searchbtn.toLowerCase())
         </div></div>
         <div>
           <h1 className='font-bold text-[25px]'>{onlineFood}</h1>
-        <div className='flex flex-wrap  gap-10 justify-between items-center  pt-10'>
+        <div className='flex flex-wrap  gap-9  items-center  pt-10 mx-auto'>
           {rest.map((res,index) => {
             return (
               <Link to={`/restaurants/${res.info.id}`}  key={index} className="link-reset">
@@ -74,5 +74,6 @@ res.info.name.toLowerCase().includes(searchbtn.toLowerCase())
     </div>
   )
 }
+
 
 export default Body
